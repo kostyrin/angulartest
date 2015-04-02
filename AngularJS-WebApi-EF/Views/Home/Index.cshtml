@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="storeApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/App/Controllers/controller.js"></script>
+</head>
+<body ng-controller="ProductListCtrl">
+
+    <div class="container">
+        <h1>{{title}}</h1>
+        <input type="text" ng-model="query"/>
+        <ul>
+            <li ng-repeat="product in products | filter:doneAndFilter">
+                <span>{{product.name}}</span>
+                {{product.descr}}
+                {{product.status}}
+            </li>
+        </ul>
+        <p>Symmary: {{products.length}}</p>
+        <hr>
+        <ul>
+            <li>1. Currency: {{234 | currency}}</li>
+            <li>3. Number {{1234.5 | number:3}}</li>
+            <li><pre>{{ {'text':'text', 'text2':'etxt text'} | json }}</pre></li>
+        </ul>
+        
+        <hr>
+        
+        <table>
+            <thead>
+                <tr><a href="">Name</a></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products | orderBy:sortField">
+                    <td>{{product.name}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+    </div>
+</body>
+</html>
+
+
+
