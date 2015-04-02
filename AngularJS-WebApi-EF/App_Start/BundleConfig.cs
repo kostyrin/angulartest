@@ -16,7 +16,9 @@ namespace AngularJS_WebApi_EF
                         "~/Scripts/angular.js", "~/Scripts/angular-resource.js", 
                         "~/Scripts/App/app.js", 
                         "~/Scripts/App/Services/*.js", 
-                        "~/Scripts/App/Directives/*.js", "~/Scripts/App/Directives/Services/*.js"));
+                        "~/Scripts/App/Directives/*.js"
+                        , "~/Scripts/App/Directives/Services/*.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/toastr").Include(
                         "~/Scripts/toastr.js"));

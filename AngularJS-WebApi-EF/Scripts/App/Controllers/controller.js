@@ -1,13 +1,13 @@
 ﻿'use strict';
 var storeApp = angular.module('storeApp', []);
 
-storeApp.controller('ProductListCtrl', function ($scope) {
+storeApp.controller('ProductListCtrl', function ($scope, $http) {
     $scope.title = 'Products';
-    $scope.products = [
-        { 'name': 'aromana a', 'descr': 'descr1', 'status':'true', 'priority': 1 },
-        { 'name': 'bromana b', 'descr': 'descr2', 'status': 'true', 'priority': 2 },
-        { 'name': 'cromana c', 'descr': 'descr3', 'status': 'true', 'priority': 3 }
-    ];
+
+    $http.get('Products/products.json').success(function(data, status, headers, config) {
+        console.log('data:', data, '\n status:', status, '\n headers:', headers, '\n config:', config);
+    });
+
     var date = new Date();
     $scope.today = date;
 
